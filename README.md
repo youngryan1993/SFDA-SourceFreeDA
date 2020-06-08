@@ -50,8 +50,9 @@ Link: [SFDA repository][a]
 
 
 ### Download source-pretrained parameters (Fs and Cs in main paper Figure2)
-* Here, we provide source-pretrained parameters ([link][d])
+* Download source-pretrained parameters ([link][d]) in './modelsave_official/[senario_number]'    
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
+ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in './modelsave_official/02'    
 
