@@ -5,7 +5,7 @@ This is an anonymous GitHub for a NeurIPS double-blind submission
 ## Prerequisites
 * Ubuntu 18.04    
 * Python 3.6+    
-* PyTorch 1.0+ (recent version is recommended)     
+* PyTorch 1.3+ (recent version is recommended)     
 * NVIDIA GPU (>= 12GB)      
 * CUDA 10.0 (optional)         
 * CUDNN 7.5 (optional)         
@@ -17,11 +17,8 @@ This is an anonymous GitHub for a NeurIPS double-blind submission
 
 <pre>
 <code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-
-}
+conda create -n env_name python=3.6
+source activate env_name
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 </code>
 </pre>
