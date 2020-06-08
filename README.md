@@ -61,8 +61,8 @@ Link: [SFDA repository][a]
 
 * Arguments required for training is contained in ```office-train-config.yaml  ``` 
 * Here is a simple example of running an experiment on only one scenario in Office31 (A -> W)     
-* We will update our full version after a rebuttal period
-
+* We will update our full version after a rebuttal period    
+* Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
 
 ## Training
 ```
