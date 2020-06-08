@@ -2,7 +2,7 @@
 This is an anonymous GitHub for a double-blind submission
 
 
-# Prerequisites
+### Prerequisites
 Ubuntu 18.04
 Python 3.6
 PyTorch 1.0+ (recent version is recommended)
