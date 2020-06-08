@@ -32,24 +32,33 @@ conda install -c anaconda seaborn
 conda install -c conda-forge tqdm
 ```
 
-### Download Dataset
-* Download 
-Link: [Office31][googlelink]
-
-[googlelink]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
-
-* The Office31 dataset should be unzipped in '../data/office'         
-
-
-* Move the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][b]) to '../data/office'  
-
-[b]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
-
-
 ### Download this repository
 * Download 
 Link: [SFDA repository][a]
 
 [a]: https://git@github.com:youngryan1993/SFDA-Domain-Adaptation-without-Source-Data.git
+
+
+### Download Dataset
+* Download 
+Link: [Office31][b]
+
+[b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
+
+* The Office31 dataset should be unzipped in '../data/office'         
+
+
+* Move the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to '../data/office'  
+
+[c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
+
+
+### Download source-pretrained parameters (Fs and Cs in main paper Figure2)
+* Here, we provide source-pretrained parameters 
+
+* Download 
+Link: [source-pretrained parameters ][d]
+
+[d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
 
