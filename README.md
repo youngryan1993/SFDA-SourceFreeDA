@@ -49,7 +49,7 @@ Link: [SFDA repository][a]
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
 
-### Download source-pretrained parameters (Fs and Cs in main paper Figure2)
+### Download source-pretrained parameters (Fs and Cs in the main paper Figure2)
 * Download source-pretrained parameters ([link][d]) in './modelsave_official/office/[scenario_number]'    
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
@@ -61,4 +61,15 @@ Link: [SFDA repository][a]
 
 * Arguments required for training is contained in office-train-config.yaml     
 * Here is a simple example of running an experiment on only one scenario in Office31 (A -> W)     
-* We will upload our full version after a rebuttal period
+* We will update our full version after a rebuttal period
+
+
+## Training
+```
+python SFDA_train.py --config office-train-config.yaml
+```
+
+## Testing on pretrained model
+```
+python SFDA_test.py --config office-train-config.yaml
+```
