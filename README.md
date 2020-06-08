@@ -40,21 +40,21 @@ Link: [SFDA repository][a]
 
 
 ### Download Dataset
-* Download the Office31 dataset ([link][b]) and unzip in '../data/office'     
+* Download the Office31 dataset ([link][b]) and unzip in ```'../data/office'```     
 
 [b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
 
-* Download the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to '../data/office'  
+* Download the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to ```'../data/office'```  
 
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
 
 ### Download source-pretrained parameters (Fs and Cs in the main paper Figure2)
-* Download source-pretrained parameters ([link][d]) in './modelsave_official/office/[scenario_number]'    
+* Download source-pretrained parameters ([link][d]) in ```'./modelsave_official/office/[scenario_number]'```    
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
-   ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in './modelsave_official/office/02'    
+   ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in ```'./modelsave_official/office/02'```    
 
 
 ## Training and testing
