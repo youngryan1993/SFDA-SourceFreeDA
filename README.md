@@ -41,7 +41,7 @@ Link: [Office31][googlelink]
 * The Office31 dataset should be unzipped in '../data/office'         
 
 
-* Move the text file ([link][b]) to '../data/office'  
+* Move the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt [link][b]) to '../data/office'  
 
 [b]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
