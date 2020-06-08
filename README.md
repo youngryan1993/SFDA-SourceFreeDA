@@ -1,5 +1,5 @@
 # SFDA-Domain-Adaptation-without-Source-Data
-This is an anonymous GitHub for a NeurIPS double-blind submission
+This is an anonymous GitHub for a NeurIPS double-blind submission     
 Note: We will refer the related GitHub codes after public release for keeping anonymity
 
 ## Prerequisites
