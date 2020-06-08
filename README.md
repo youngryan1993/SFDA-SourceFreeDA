@@ -31,3 +31,7 @@ conda install -c conda-forge opencv
 conda install -c anaconda seaborn
 conda install -c conda-forge tqdm
 ```
+
+### Download Dataset
+* Install python libraries:  shorturl.at/suIY3    
+
