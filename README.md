@@ -40,24 +40,17 @@ Link: [SFDA repository][a]
 
 
 ### Download Dataset
-* Download 
-Link: [Office31][b]
+* Download the Office31 dataset ([link][b]) and unzip in '../data/office'     
 
 [b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
 
-* The Office31 dataset should be unzipped in '../data/office'         
-
-
-* Move the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to '../data/office'  
+* Download the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to '../data/office'  
 
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
 
 ### Download source-pretrained parameters (Fs and Cs in main paper Figure2)
-* Here, we provide source-pretrained parameters 
-
-* Download 
-Link: [source-pretrained parameters ][d]
+* Here, we provide source-pretrained parameters ([link][d])
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
