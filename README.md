@@ -79,6 +79,6 @@ python SFDA_test.py --config office-train-config.yaml
 
 |  <center>Header1</center> |  <center>Header2</center> |  <center>Header3</center> |  <center>Header3</center> |  <center>Header3</center> |  <center>Header3</center> |  <center>Header3</center> |
 |:--------|:--------:|--------:|--------:|--------:|--------:|--------:|
-|**cell 1x1** </center>| <center>cell 1x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
-|**cell 2x1** </center>| <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+|**cell 1x1** </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+|**cell 2x1** </center>| <center>cell 2x2 | <center>24 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
 |**cell 3x1** </center>| <center>cell 3x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
