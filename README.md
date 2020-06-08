@@ -15,3 +15,13 @@ This is an anonymous GitHub for a NeurIPS double-blind submission
 ### Installation
 * Configure virtual (anaconda) environment
 
+<pre>
+<code>
+public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
+
+}
+</code>
+</pre>
