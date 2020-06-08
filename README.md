@@ -40,8 +40,8 @@ Link: [Office31][googlelink]
 
 ### Download this repo
 * Download 
-Link: [Office31][googlelink]
+Link: [SFDA repo][a]
 
-[googlelink]: git@github.com:youngryan1993/SFDA-Domain-Adaptation-without-Source-Data.git
+[a]: git@github.com:youngryan1993/SFDA-Domain-Adaptation-without-Source-Data.git
 
 
