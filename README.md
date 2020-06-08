@@ -59,7 +59,7 @@ Link: [SFDA repository][a]
 
 ## Training and testing
 
-* Arguments required for training is contained in office-train-config.yaml     
+* Arguments required for training is contained in ```office-train-config.yaml  ``` 
 * Here is a simple example of running an experiment on only one scenario in Office31 (A -> W)     
 * We will update our full version after a rebuttal period
 
