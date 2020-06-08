@@ -43,7 +43,7 @@ Link: [Office31][googlelink]
 
 * Move the text file ([link][b]) to '../data/office'  
 
-[b]: https://drive.google.com/open?id=1Z7vxrPanDSTcT7i4IZzqZOCpOE2JN5ri
+[b]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
 
 ### Download this repository
