@@ -34,6 +34,6 @@ conda install -c conda-forge tqdm
 
 ### Download Dataset
 * Download 
-Link: [Office31][a]
-[a]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view 
+Link: [Google][googlelink]
 
+[googlelink]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
