@@ -80,6 +80,6 @@ python SFDA_test.py --config office-train-config.yaml
 * The code provides the following results on office-31
 
 |  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>D→A</center> |  <center>W→A</center> |  <center>Avg</center> |
-|:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|Accuracy </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+|:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|Accuracy </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
 
