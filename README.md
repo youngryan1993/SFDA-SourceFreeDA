@@ -77,8 +77,7 @@ python SFDA_test.py --config office-train-config.yaml
 
 ## Simple experimental results
 
-|  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>Header3</center> |  <center>Header3</center> |
+|  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>D→A</center> |  <center>W→A</center> |
 |:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|**cell 1x1** </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
-|**cell 2x1** </center>| <center>cell 2x2 | <center>24 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
-|**cell 3x1** </center>| <center>cell 3x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+|Accuracy </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+
