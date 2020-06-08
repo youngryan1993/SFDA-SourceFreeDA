@@ -1,5 +1,5 @@
 # SFDA-Domain-Adaptation-without-Source-Data
-This is an anonymous GitHub for a double-blind submission
+This is an anonymous GitHub for a NeurIPS double-blind submission
 
 
 ## Prerequisites
@@ -9,3 +9,9 @@ This is an anonymous GitHub for a double-blind submission
 * NVIDIA GPU (>= 12GB)      
 * CUDA 10.0 (optional)         
 * CUDNN 7.5 (optional)         
+
+## Getting Started
+
+### Installation
+* Configure virtual (anaconda) environment
+
