@@ -50,7 +50,7 @@ Link: [SFDA repository][a]
 
 
 ### Download source-pretrained parameters (Fs and Cs in main paper Figure2)
-* Download source-pretrained parameters ([link][d]) in './modelsave_official/[scenario_number]'    
+* Download source-pretrained parameters ([link][d]) in './modelsave_official/office/[scenario_number]'    
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
