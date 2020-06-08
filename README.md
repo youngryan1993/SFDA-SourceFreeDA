@@ -36,5 +36,5 @@ conda install -c conda-forge tqdm
 * Install python libraries:  shorturl.at/suIY3    
 Link: [Google][googlelink]
 
-[googlelink]: shorturl.at/suIY3 
+[googlelink]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view 
 
