@@ -41,6 +41,11 @@ Link: [Office31][googlelink]
 * The Office31 dataset should be unzipped in '../data/office'         
 
 
+* Move the text file ([link][b]) to '../data/office'  
+
+[b]: https://drive.google.com/open?id=1Z7vxrPanDSTcT7i4IZzqZOCpOE2JN5ri
+
+
 ### Download this repository
 * Download 
 Link: [SFDA repository][a]
