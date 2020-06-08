@@ -34,7 +34,7 @@ conda install -c conda-forge tqdm
 
 ### Download Dataset
 * Install python libraries:  shorturl.at/suIY3    
-Link: [Google][googlelink]
+Link: [Office31][a]
 
-[googlelink]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view 
+[a]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view 
 
