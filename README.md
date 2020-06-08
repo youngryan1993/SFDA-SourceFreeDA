@@ -19,7 +19,7 @@ conda create -n env_name python=3.6
 source activate env_name
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 ```
-* Install python libraries
+* Install python libraries (!!!!!!!!!!!!!!!! change)
 ```
 conda install -c conda-forge matplotlib
 conda install -c anaconda yaml
@@ -54,5 +54,5 @@ Link: [SFDA repository][a]
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
 
-   ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in './modelsave_official/02'    
+   ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in './modelsave_official/office/02'    
 
