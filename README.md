@@ -50,11 +50,11 @@ Link: [SFDA repository][a]
 
 
 ### Download source-pretrained parameters (Fs and Cs in the main paper Figure2)
-* Download source-pretrained parameters ([link][d]) in ```./source_pretrained_weights/office/[scenario_number]```       
+* Download source-pretrained parameters ([link][d]) in ```./source_pretrained_weights/[scenario_number]```       
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing       
 
-  ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in ```./source_pretrained_weights/office/02```    
+  ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in ```./source_pretrained_weights/02```    
 
 
 ## Training and testing
