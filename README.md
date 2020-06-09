@@ -44,7 +44,7 @@ Link: [SFDA repository][a]
 
 [b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
 
-* Download the text file (amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt / [link][c]) to ```../data/office```  
+* Download the text file ([link][c]), e.g., amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt, to ```../data/office```  
 
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
@@ -65,11 +65,14 @@ Link: [SFDA repository][a]
 * Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
 
 ## Training
+
+*  Run the following command
+
 ```
 python SFDA_train.py --config office-train-config.yaml
 ```
 
-## Testing on pretrained model
+## Testing (on pretrained model)
 
 * Download SFDA pretrained parameters ([link][e]) in ```./pretrained_weights/[scenario_number]```   
 
@@ -82,6 +85,8 @@ python SFDA_train.py --config office-train-config.yaml
 ```
 python SFDA_test.py --config office-train-config.yaml
 ```
+
+*  Or run the training code to generate pretrained weights
 
 
 ## Simple experimental results
