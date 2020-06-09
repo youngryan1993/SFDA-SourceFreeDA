@@ -62,7 +62,7 @@ Link: [SFDA repository][a]
 * Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
 * We will update our full version including OfficeHome and Visda-C after a rebuttal period    
 
-## Training
+### Training
 
 *  Run the following command
 
@@ -70,7 +70,7 @@ Link: [SFDA repository][a]
 python SFDA_train.py --config office-train-config.yaml
 ```
 
-## Testing (on pretrained model)
+### Testing (on pretrained model)
 
 * Download SFDA pretrained parameters ([link][e]) in ```./pretrained_weights/[scenario_number]```   
 
