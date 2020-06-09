@@ -5,7 +5,7 @@ Note: We will refer the related GitHub codes after public release for keeping an
 ## Prerequisites
 * Ubuntu 18.04    
 * Python 3.6+    
-* PyTorch 1.3+ (recent version is recommended)     
+* PyTorch 1.5+ (recent version is recommended)     
 * NVIDIA GPU (>= 12GB)      
 * CUDA 10.0 (optional)         
 * CUDNN 7.5 (optional)         
@@ -25,11 +25,9 @@ conda install -c conda-forge matplotlib
 conda install -c anaconda yaml
 conda install -c anaconda pyyaml 
 conda install -c anaconda scipy
-conda install -c anaconda pandas 
 conda install -c anaconda scikit-learn 
-conda install -c conda-forge opencv
-conda install -c anaconda seaborn
-conda install -c conda-forge tqdm
+conda install -c conda-forge easydict
+pip install easydl
 ```
 
 ### Download this repository
