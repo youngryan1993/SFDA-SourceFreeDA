@@ -70,6 +70,15 @@ python SFDA_train.py --config office-train-config.yaml
 ```
 
 ## Testing on pretrained model
+
+* Download SFDA pretrained parameters ([link][e]) in ```./pretrained_weights/[scenario_number]```   
+
+   ex) SFDA pretrained parameters of A[0] -> W[2] senario should be located in ```./pretrained_weights/02```    
+
+[e]: https://drive.google.com/drive/folders/1XiWZXsES_oEAI2WMdOBxqjKieA7zOOwZ?usp=sharing
+
+*  Run the following command
+
 ```
 python SFDA_test.py --config office-train-config.yaml
 ```
@@ -81,5 +90,5 @@ python SFDA_test.py --config office-train-config.yaml
 
 |  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>D→A</center> |  <center>W→A</center> |  <center>Avg</center> |
 |:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|Accuracy </center>| <center>cell 1x2 | <center>11 | <center>27 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 | <center>cell 2x2 |
+|Accuracy </center>| <center>91.06 | <center>97.35 | <center>98.99 | <center>91.96 | <center>71.60 | <center>68.62 | <center>cell 2x2 | <center>cell 2x2 |
 
