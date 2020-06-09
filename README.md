@@ -36,10 +36,10 @@ conda install -c conda-forge tqdm
 * Download 
 Link: [SFDA repository][a]
 
-[a]: https://git@github.com:youngryan1993/SFDA-Domain-Adaptation-without-Source-Data.git
+[a]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
 
 
-### Download Dataset
+### Download dataset
 * Download the Office31 dataset ([link][b]) and unzip in ```../data/office```     
 
 [b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
