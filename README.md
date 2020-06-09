@@ -90,5 +90,5 @@ python SFDA_test.py --config office-train-config.yaml
 
 |  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>D→A</center> |  <center>W→A</center> |  <center>Avg</center> |
 |:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|Accuracy </center>| <center>91.06 | <center>97.35 | <center>98.99 | <center>91.96 | <center>71.60 | <center>68.62 | <center>cell 2x2 | <center>cell 2x2 |
+|Accuracy </center>| <center>91.06 | <center>97.35 | <center>98.99 | <center>91.96 | <center>71.60 | <center>68.62 | <center>86.60 | 
 
