@@ -1,0 +1,11 @@
+data:
+  dataloader: {batch_size: 32, class_balance: true, data_workers: 2}
+  dataset: {n_share: 31, n_total: 31, name: office, root_path: ../data/office,
+    source: 0, target: 2 }
+log: {log_interval: 10, root_dir: public}
+misc: {gpus: 1}
+model: {base_model: resnet50, pretrained_model: False}
+test: {resume_file: Clipart_to_Art.pkl, test_interval: 1000, test_only: false}
+train: {update_freq: 100, lr: 0.001, min_step: 5000, momentum: 0.9, weight_decay: 0.0005}
+
+
