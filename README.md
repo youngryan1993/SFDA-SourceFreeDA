@@ -80,13 +80,14 @@ python SFDA_train.py --config office-train-config.yaml
 
 [e]: https://drive.google.com/drive/folders/1XiWZXsES_oEAI2WMdOBxqjKieA7zOOwZ?usp=sharing
 
+*  Or run the training code to generate pretrained weights
+
 *  Run the following command
 
 ```
 python SFDA_test.py --config office-train-config.yaml
 ```
 
-*  Or run the training code to generate pretrained weights
 
 
 ## Simple experimental results
