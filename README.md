@@ -50,19 +50,19 @@ Link: [SFDA repository][a]
 
 
 ### Download source-pretrained parameters (Fs and Cs in the main paper Figure2)
-* Download source-pretrained parameters ([link][d]) in ```./modelsave_official/office/[scenario_number]```    
+* Download source-pretrained parameters ([link][d]) in ```./modelsave_official/office/[scenario_number]```       
 
-[d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing
+[d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing       
 
-   ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in ```./modelsave_official/office/02```    
+  ex) Source-pretrained parameters of A[0] -> W[2] senario should be located in ```./modelsave_official/office/02```    
 
 
 ## Training and testing
 
-* Arguments required for training is contained in ```office-train-config.yaml  ``` 
-* Here is a simple example of running an experiment on only one scenario in Office31 (A -> W)     
-* We will update our full version after a rebuttal period    
+* Arguments required for training are contained in ```office-train-config.yaml  ``` 
+* Here is a example of running an experiment on Office31 (default: A -> W)
 * Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
+* We will update our full version including OfficeHome and Visda-C after a rebuttal period    
 
 ## Training
 
