@@ -31,18 +31,23 @@ pip install easydl
 ```
 
 ### Download this repository
-* Download 
-Link: [SFDA repository][a]
+* We provide two versions of repository (with dataset / without dataset) for a flexible experiment
+
+* Full SFDA repository (with dataset): Link: [download link][aa]
+
+[aa]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
+
+* SFDA repository (without dataset): Link: [download link][a]
 
 [a]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
 
 
 ### Download dataset
-* Download the Office31 dataset ([link][b]) and unzip in ```../data/office```     
+* Download the Office31 dataset ([link][b]) and unzip in ```./data/office```     
 
 [b]: https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view
 
-* Download the text file ([link][c]), e.g., amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt, in ```../data/office```  
+* Download the text file ([link][c]), e.g., amazon_31_list.txt, dslr_31_list.txt, webcam_31_list.txt, in ```./data/office```  
 
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
