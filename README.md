@@ -49,13 +49,11 @@ pip install easydl
 |-- APM_update.py
 |-- SFDA_test.py
 |-- SFDA_train.py
-|-- pycache
-|   |-- APM_update.cpython-36.pyc
-|   |-- config.cpython-36.pyc
-|   |-- data.cpython-36.pyc
-|   |-- lib.cpython-36.pyc
-|   `-- net.cpython-36.pyc
 |-- config.py
+|-- data.py
+|-- lib.py
+|-- net.py
+|-- office-train-config.yaml
 |-- data
 |   `-- office
 |       |-- domain_adaptation_images
@@ -69,10 +67,6 @@ pip install easydl
 |       |-- amazon_31_list.txt
 |       |-- dslr_31_list.txt
 |       `-- webcam_31_list.txt
-|-- data.py
-|-- lib.py
-|-- net.py
-|-- office-train-config.yaml
 |-- pretrained_weights
 |   `-- 02
 |       `-- domain02accBEST_model_checkpoint.pth.tar
