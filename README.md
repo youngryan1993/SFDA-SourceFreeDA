@@ -42,6 +42,45 @@ pip install easydl
 
 [a]: https://drive.google.com/drive/folders/1ndxbQLAkDxxvlPs7E65_6fQ4dNbxXkHR?usp=sharing
 
+
+* Ropository structure visualization  (Full SFDA repository)
+
+```
+|-- APM_update.py
+|-- SFDA_test.py
+|-- SFDA_train.py
+|-- pycache
+|   |-- APM_update.cpython-36.pyc
+|   |-- config.cpython-36.pyc
+|   |-- data.cpython-36.pyc
+|   |-- lib.cpython-36.pyc
+|   `-- net.cpython-36.pyc
+|-- config.py
+|-- data
+|   `-- office
+|       |-- domain_adaptation_images
+|       |   |-- amazon
+|       |   |   `-- images
+|       |   |-- dslr
+|       |   |   `-- images
+|       |   `--- webcam
+|       |       `-- images
+|       |          
+|       |-- amazon_31_list.txt
+|       |-- dslr_31_list.txt
+|       `-- webcam_31_list.txt
+|-- data.py
+|-- lib.py
+|-- net.py
+|-- office-train-config.yaml
+|-- pretrained_weights
+|   `-- 02
+|       `-- domain02accBEST_model_checkpoint.pth.tar
+`-- source_pretrained_weights
+    `-- 02
+        `-- model_checkpoint.pth.tar
+```
+
 ### Download dataset
 * Download the Office31 dataset ([link][b]) and unzip in ```./data/office```     
 
