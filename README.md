@@ -36,12 +36,11 @@ pip install easydl
 * Full SFDA repository (with dataset): Link: [download link][aa]      
   * In this case, go to ```Training and testing Step``` directly
 
-[aa]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
+[aa]: https://drive.google.com/drive/folders/11g8yOWxIG47G-5vImtX98qrg0Y4UxrGd?usp=sharing
 
 * SFDA repository (without dataset): Link: [download link][a]
 
-[a]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
-
+[a]: https://drive.google.com/drive/folders/1ndxbQLAkDxxvlPs7E65_6fQ4dNbxXkHR?usp=sharing
 
 ### Download dataset
 * Download the Office31 dataset ([link][b]) and unzip in ```./data/office```     
