@@ -62,8 +62,7 @@ pip install easydl
 |       |   |-- dslr
 |       |   |   `-- images
 |       |   `--- webcam
-|       |       `-- images
-|       |          
+|       |       `-- images         
 |       |-- amazon_31_list.txt
 |       |-- dslr_31_list.txt
 |       `-- webcam_31_list.txt
