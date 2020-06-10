@@ -29,7 +29,7 @@ model_dict = {
 }
 
 
-# ===  Network structure =================
+# ======= network architecture =======
 class Source_FixedNet(nn.Module):
     def __init__(self):
         super(Source_FixedNet, self).__init__()
@@ -46,18 +46,18 @@ class Target_TrainableNet(nn.Module):
         self.cls_multibranch = CLS(self.feature_extractor.output_num(), classifier_output_dim, bottle_neck_dim=256)
 
 
-# === source pretrained network ====================
+# ======= pre-trained source network =======
 fixed_sourceNet = Source_FixedNet()
 fixed_sourceNet.load_state_dict(save_model_statedict)
-fixed_feature_extractor =(fixed_sourceNet.feature_extractor).cuda()
-fixed_classifier = (fixed_sourceNet.classifier).cuda()
-fixed_feature_extractor.eval()
-fixed_classifier.eval()
+fixed_feature_extractor_s =(fixed_sourceNet.feature_extractor).cuda()
+fixed_classifier_s = (fixed_sourceNet.classifier).cuda()
+fixed_feature_extractor_s.eval()
+fixed_classifier_s.eval()
 
-# === target network   =================
+# ======= trainable target network =======
 trainable_tragetNet = Target_TrainableNet()
-feature_extractor =(trainable_tragetNet.feature_extractor).cuda()
-feature_extractor.load_state_dict(fixed_sourceNet.feature_extractor.state_dict())
+feature_extractor_t =(trainable_tragetNet.feature_extractor).cuda()
+feature_extractor_t.load_state_dict(fixed_sourceNet.feature_extractor.state_dict())
 classifier_s2t = (trainable_tragetNet.classifier).cuda()
 classifier_s2t.load_state_dict(fixed_sourceNet.classifier.state_dict())
 classifier_t = (trainable_tragetNet.cls_multibranch).cuda()
@@ -70,22 +70,18 @@ model_dict = {
             'accuracy': 0}
 
 
-feature_extractor.train()
+feature_extractor_t.train()
 classifier_s2t.train()
 classifier_t.train()
-
 print ("Finish model loaded...")
-
-
 
 domains=['amazon', 'dslr', 'webcam']
 print ('domain....'+domains[args.data.dataset.source]+'>>>>>>'+domains[args.data.dataset.target])
 
-
 scheduler = lambda step, initial_lr: inverseDecaySheduler(step, initial_lr, gamma=10, power=0.75, max_iter=(args.train.min_step))
 
 optimizer_finetune = OptimWithSheduler(
-    optim.SGD(feature_extractor.parameters(), lr=args.train.lr / 10.0, weight_decay=args.train.weight_decay, momentum=args.train.momentum, nesterov=True),
+    optim.SGD(feature_extractor_t.parameters(), lr=args.train.lr / 10.0, weight_decay=args.train.weight_decay, momentum=args.train.momentum, nesterov=True),
     scheduler)
 optimizer_classifier_s2t = OptimWithSheduler(
     optim.SGD(classifier_s2t.parameters(), lr=args.train.lr, weight_decay=args.train.weight_decay, momentum=args.train.momentum, nesterov=True),
@@ -105,25 +101,26 @@ while global_step < args.train.min_step:
 
     epoch_id += 1
 
-    for i, (im_target, label_target) in enumerate(target_train_dl):
+    for i, (img_target, label_target) in enumerate(target_train_dl):
 
+        # APM init/update
         if (global_step) % pt_memory_update_frequncy == 0:
-            # TODO ==== APM init/update
-            prototype_memory, num_prototype_,prototype_memory_dict = APM_init_update(feature_extractor, classifier_t)
+            prototype_memory, num_prototype_,prototype_memory_dict = APM_init_update(feature_extractor_t, classifier_t)
 
-        im_target = im_target.cuda()
 
-        # TODO ==== forward pass:  source-pretrained networks
-        fixed_fc1_t = fixed_feature_extractor.forward(im_target)
-        _, _, _, pseudo_logit_target = fixed_classifier.forward(fixed_fc1_t)
-        pseudo_label_source = torch.argmax(pseudo_logit_target, dim=1)
+        img_target = img_target.cuda()
 
-        # TODO ==== forward pass:  target networks
-        fc1_t = feature_extractor.forward(im_target)
-        fc1_s, feature_bottleneck, fc2_t, predict_prob_target = classifier_s2t.forward(fc1_t)
-        _, _, multibranch_logit, _  = classifier_t(fc1_t)
+        # forward pass:  source-pretrained network
+        fixed_fc1_s = fixed_feature_extractor_s.forward(img_target)
+        _, _, _, logit_s = fixed_classifier_s.forward(fixed_fc1_s)
+        pseudo_label_s = torch.argmax(logit_s, dim=1)
 
-        # TODO ==== Compute pesudo label
+        # forward pass:  target network
+        fc1_t = feature_extractor_t.forward(img_target)
+        _, _, logit_s2t, _ = classifier_s2t.forward(fc1_t)
+        _, _, logit_t, _  = classifier_t(fc1_t)
+
+        # compute pseudo labels
         proto_feat_tensor = torch.Tensor(prototype_memory) # (B * 2048)
         feature_embed_tensor = fc1_t.cpu()
         proto_feat_tensor = tensor_l2normalization(proto_feat_tensor)
@@ -131,9 +128,9 @@ while global_step < args.train.min_step:
 
         sim_mat = torch.mm(batch_feat_tensor, proto_feat_tensor.permute(1,0))
         sim_mat = F.avg_pool1d(sim_mat.unsqueeze(0), kernel_size=num_prototype_, stride=num_prototype_).squeeze(0)# (B, #class)
-        pseudo_label_corrected = torch.argmax(sim_mat, dim=1).cuda()
+        pseudo_label_t = torch.argmax(sim_mat, dim=1).cuda()
 
-        # TODO ==== Confidence-based filtering
+        # confidence-based filtering
         arg_idxs = torch.argsort(sim_mat, dim=1, descending=True) # (B, #class)
 
         first_group_idx = arg_idxs[:, 0]
@@ -161,35 +158,34 @@ while global_step < args.train.min_step:
 
         confidence_mask = ((first_dist_vec- second_dist_vec) < 0).cuda()
 
-        # TODO ===== Optimize networks based on the combination of two losses
+        # optimize target network using two types of pseudo labels
+        ce_from_s2t = nn.CrossEntropyLoss()(logit_s2t, pseudo_label_s)
+        ce_from_t = nn.CrossEntropyLoss(reduction='none')(logit_t, pseudo_label_t).view(-1, 1).squeeze(1)
+        ce_from_t = torch.mean(ce_from_t * confidence_mask, dim=0, keepdim=True)
 
         alpha = np.float(2.0 / (1.0 + np.exp(-10 * global_step / float(args.train.min_step//2))) - 1.0)
-        ce_from_sorucenet = nn.CrossEntropyLoss()(fc2_t, pseudo_label_source)
-        ce_from_confidence = nn.CrossEntropyLoss(reduction='none')(multibranch_logit, pseudo_label_corrected).view(-1, 1).squeeze(1)
-        ce_from_confidence = torch.mean(ce_from_confidence * confidence_mask, dim=0, keepdim=True)
-
-        ce = (1-alpha) * ce_from_sorucenet + alpha * ce_from_confidence
+        ce_total = (1 - alpha) * ce_from_s2t + alpha * ce_from_t
 
         with OptimizerManager([optimizer_finetune, optimizer_classifier_s2t, optimizer_classifier_t]):
-            loss = ce
+            loss = ce_total
             loss.backward()
 
         global_step += 1
 
-        # TODO ===== Evaluation during training
+        # evaluation during training
         if global_step % args.test.test_interval == 0:
 
             counter = AccuracyCounter()
-            with TrainingModeManager([feature_extractor, classifier_t], train=False) as mgr, torch.no_grad():
+            with TrainingModeManager([feature_extractor_t, classifier_t], train=False) as mgr, torch.no_grad():
 
-                for i, (im, label) in enumerate(target_test_dl):
-                    im = im.cuda()
+                for i, (img, label) in enumerate(target_test_dl):
+                    img = img.cuda()
                     label = label.cuda()
 
-                    feature = feature_extractor.forward(im)
-                    ___, __, before_softmax, predict_prob = classifier_t.forward(feature)
+                    feature = feature_extractor_t.forward(img)
+                    _, _, _, predict_prob_t = classifier_t.forward(feature)
 
-                    counter.addOneBatch(variable_to_numpy(predict_prob), variable_to_numpy(one_hot(label, args.data.dataset.n_total)))
+                    counter.addOneBatch(variable_to_numpy(predict_prob_t), variable_to_numpy(one_hot(label, args.data.dataset.n_total)))
 
             acc_test = counter.reportAccuracy()
             print('>>>>>>>>>>>accuracy>>>>>>>>>>>>>>>>.')
@@ -207,16 +203,16 @@ while global_step < args.train.min_step:
 
 
 counter = AccuracyCounter()
-with TrainingModeManager([feature_extractor, classifier_t], train=False) as mgr, torch.no_grad():
+with TrainingModeManager([feature_extractor_t, classifier_t], train=False) as mgr, torch.no_grad():
 
-        for i, (im, label) in enumerate(target_test_dl):
-            im = im.cuda()
+        for i, (img, label) in enumerate(target_test_dl):
+            img = img.cuda()
             label = label.cuda()
 
-            feature = feature_extractor.forward(im)
-            ___, __, before_softmax, predict_prob = classifier_t.forward(feature)
+            feature = feature_extractor_t.forward(img)
+            _, _, _, predict_prob_t = classifier_t.forward(feature)
 
-            counter.addOneBatch(variable_to_numpy(predict_prob), variable_to_numpy(one_hot(label, args.data.dataset.n_total)))
+            counter.addOneBatch(variable_to_numpy(predict_prob_t), variable_to_numpy(one_hot(label, args.data.dataset.n_total)))
 
         acc_test = counter.reportAccuracy()
         print('>>>>>>>Final accuracy>>>>>>>>>>.')
