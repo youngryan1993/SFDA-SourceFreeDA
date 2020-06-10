@@ -34,7 +34,7 @@ pip install easydl
 * We provide two versions of repository (with dataset / without dataset) for a flexible experiment
 
 * Full SFDA repository (with dataset): Link: [download link][aa]      
-  * In this case, go to ```Training and testing``` directly
+  * In this case, go to ```Training and testing Step``` directly
 
 [aa]: https://drive.google.com/drive/folders/1b1m5hAcutp9apxfQBw4xo9XcGe13XN6b?usp=sharing
 
