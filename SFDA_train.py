@@ -201,34 +201,4 @@ while global_step < args.train.min_step:
                 torch.save(model_dict, join('pretrained_weights/'+str(args.data.dataset.source) + str(args.data.dataset.target) +'/' + 'domain'+ str(args.data.dataset.source)+str(args.data.dataset.target)+'accBEST_model_checkpoint.pth.tar'))
 
 
-
-counter = AccuracyCounter()
-with TrainingModeManager([feature_extractor_t, classifier_t], train=False) as mgr, torch.no_grad():
-
-        for i, (img, label) in enumerate(target_test_dl):
-            img = img.cuda()
-            label = label.cuda()
-
-            feature = feature_extractor_t.forward(img)
-            _, _, _, predict_prob_t = classifier_t.forward(feature)
-
-            counter.addOneBatch(variable_to_numpy(predict_prob_t), variable_to_numpy(one_hot(label, args.data.dataset.n_total)))
-
-        acc_test = counter.reportAccuracy()
-        print('>>>>>>>Final accuracy>>>>>>>>>>.')
-        print(acc_test)
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.')
-
-        if best_acc < acc_test:
-            best_acc = acc_test
-            model_dict = {
-                'global_step': global_step + 1,
-                'state_dict': trainable_tragetNet.state_dict(),
-                'accuracy': acc_test}
-
-            torch.save(model_dict, join('pretrained_weights/'+str(args.data.dataset.source) + str(
-                args.data.dataset.target) +'/' + 'domain' + str(args.data.dataset.source) + str(
-                args.data.dataset.target) + 'accBEST_model_checkpoint.pth.tar'))
-
-
 exit()
