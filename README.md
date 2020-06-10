@@ -31,10 +31,10 @@ pip install easydl
 ```
 
 ### Download this repository
-* We provide two versions of repository (with dataset / without dataset) for a flexible experiment
+* We provide two versions of the repository (with dataset / without dataset) for a flexible experiment
 
 * Full SFDA repository (with dataset): [download link][aa]      
-  * In this case, go to ```Training and testing Step``` directly
+  * In this case, go to ```training and testing``` step directly
 
 [aa]: https://drive.google.com/drive/folders/11g8yOWxIG47G-5vImtX98qrg0Y4UxrGd?usp=sharing
 
@@ -43,7 +43,7 @@ pip install easydl
 [a]: https://drive.google.com/drive/folders/1ndxbQLAkDxxvlPs7E65_6fQ4dNbxXkHR?usp=sharing
 
 
-* Ropository structure visualization  (Full SFDA repository)
+*  Visualization of repository structure (Full SFDA repository)
 
 ```
 |-- APM_update.py
@@ -84,7 +84,7 @@ pip install easydl
 [c]: https://drive.google.com/drive/folders/11wFsBoG--cm7uD0L-7L5X5hprWDCMBpH?usp=sharing
 
 
-### Download source-pretrained parameters (Fs and Cs in the main paper Figure2)
+### Download source-pretrained parameters (Fs and Cs of Figure 2 in our main paper)
 * Download source-pretrained parameters ([link][d]) in ```./source_pretrained_weights/[scenario_number]```       
 
 [d]: https://drive.google.com/drive/folders/1mkzEl8SHQ0mVFnYV0CvZIdeLstCm2shy?usp=sharing       
@@ -94,10 +94,10 @@ pip install easydl
 
 ## Training and testing
 
-* Arguments required for training are contained in ```office-train-config.yaml  ``` 
-* Here is a example of running an experiment on Office31 (default: A -> W)
+* Arguments required for training and testing are contained in ```office-train-config.yaml  ``` 
+* Here is an example of running an experiment on Office31 (default: A -> W)
 * Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
-* We will update our full version including OfficeHome and Visda-C after a rebuttal period    
+* We will update the full version of our framework including settings for ```OfficeHome``` and ```Visda-C``` after the rebuttal period of NeurIPS 2020   
 
 ### Training
 
@@ -109,13 +109,13 @@ python SFDA_train.py --config office-train-config.yaml
 
 ### Testing (on pretrained model)
 
-* Download SFDA pretrained parameters ([link][e]) in ```./pretrained_weights/[scenario_number]```   
+* As a first step, download SFDA pretrained parameters ([link][e]) in ```./pretrained_weights/[scenario_number]```   
 
    ex) SFDA pretrained parameters of A[0] -> W[2] senario should be located in ```./pretrained_weights/02```    
 
 [e]: https://drive.google.com/drive/folders/1XiWZXsES_oEAI2WMdOBxqjKieA7zOOwZ?usp=sharing
 
-*  Or run the training code to generate pretrained weights
+*  or run the training code to obtain pretrained weights
 
 *  Run the following command
 
@@ -125,9 +125,9 @@ python SFDA_test.py --config office-train-config.yaml
 
 
 
-## Simple experimental results
+## Experimental results on Office31
 
-* The code provides the following results on office-31
+* Results using the provided code
 
 |  <center> </center> |  <center>A→W</center> |  <center>D→W</center> |  <center>W→D</center> |  <center>A→D</center> |  <center>D→A</center> |  <center>W→A</center> |  <center>Avg</center> |
 |:--------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
