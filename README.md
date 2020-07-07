@@ -1,6 +1,4 @@
 # SFDA-Domain-Adaptation-without-Source-Data
-This is an anonymous GitHub for a NeurIPS2020 double-blind submission     
-Note: We will refer the related GitHub codes after public release for keeping anonymity
 
 ## Prerequisites
 * Ubuntu 18.04    
