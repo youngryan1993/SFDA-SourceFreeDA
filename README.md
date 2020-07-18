@@ -95,7 +95,7 @@ pip install easydl
 * Arguments required for training and testing are contained in ```office-train-config.yaml  ``` 
 * Here is an example of running an experiment on Office31 (default: A -> W)
 * Scenario can be changed by editing ```source: 0, target: 2```  in ```office-train-config.yaml```
-* We will update the full version of our framework including settings for ```OfficeHome``` and ```Visda-C``` after the rebuttal period of NeurIPS 2020   
+* We will update the full version of our framework including settings for ```OfficeHome``` and ```Visda-C```  
 
 ### Training
 
