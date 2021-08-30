@@ -1,4 +1,4 @@
-# PrDA-Progressive Domain Adaptation from a Source Pre-trained Model
+# SFDA - Domain Adaptation without Source Data
 
 ## Prerequisites
 * Ubuntu 18.04    
