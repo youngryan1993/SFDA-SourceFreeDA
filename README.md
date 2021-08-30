@@ -31,17 +31,17 @@ pip install easydl
 ### Download this repository
 * We provide two versions of the repository (with dataset / without dataset) for a flexible experiment
 
-* Full PrDA repository (with dataset): [download link][aa]      
+* Full SFDA repository (with dataset): [download link][aa]      
   * In this case, go to ```training and testing``` step directly
 
 [aa]: https://drive.google.com/drive/folders/11g8yOWxIG47G-5vImtX98qrg0Y4UxrGd?usp=sharing
 
-* PrDA repository (without dataset): [download link][a]
+* SFDA repository (without dataset): [download link][a]
 
 [a]: https://drive.google.com/drive/folders/1ndxbQLAkDxxvlPs7E65_6fQ4dNbxXkHR?usp=sharing
 
 
-*  Visualization of repository structure (Full PrDA repository)
+*  Visualization of repository structure (Full SFDA repository)
 
 ```
 |-- APM_update.py
